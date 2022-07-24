@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<div class="topnav">
+    <a href="/books">Home</a>
+    <a href="/books/new">Add a book</a>
+  </div>
+
+<header class="books-section">Add a new book</header>
+<body>
+    <form class="form-inline" action="/books" method="POST">
+        
+        <label for="title">Title</label>
+        <input type="text" placeholder="Insert title" name="title" id="title" required>
+
+
+        <label for="author">Author</label required>
+        <input type="text" placeholder="Insert author" name="author" id="author"required >
+
+        <label for="genre">Genre</label required>
+        <input type="text" placeholder="Insert genre" name="genre" id="genre" required>
+
+        <input type="submit" class="add-btn" value="Add Book" >
+
+
+
+    </form>
+    
+</body>
+</html>
+
+
+

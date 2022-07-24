@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+    <div class="topnav a.active" >
+        <a href="/books">Home</a>
+        <a href="/books/new">Add a book</a>
+    </div>
+
+      <header>Awesome books</header>
+    <h1 id="h1">The awesome list of books</h1>
+    <hr>
+<body>
+    <section>
+        <div class="book-container">
+            {% for book in books %}
+            <div class="book">
+               TITLE :  <h3>{{ book.title }}</h3>
+               AUTHOR : <h3>{{ book.author }}</h3>
+               GENRE : <h3>{{ book.genre }}</h3>
+               <form action="/books/delete/{{ books.index(book) }}" method="POST">
+                <input type="submit" class="add-btn" value="DELETE">
+                </form>
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>
+
